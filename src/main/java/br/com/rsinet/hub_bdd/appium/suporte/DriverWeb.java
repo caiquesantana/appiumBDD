@@ -13,10 +13,10 @@ import io.appium.java_client.android.AndroidDriver;
 public class DriverWeb {
 	private static DesiredCapabilities capabilities;
 
-	private static AndroidDriver<WebElement> driver;
+	private static WebDriver driver;
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public static AndroidDriver creatDriver() throws MalformedURLException {
+	@SuppressWarnings("rawtypes")
+	public static WebDriver creatDriver() throws MalformedURLException {
 		if (driver == null) {
 
 			capabilities = new DesiredCapabilities();
@@ -28,7 +28,7 @@ public class DriverWeb {
 			capabilities.setCapability("unicodeKeyboard", true);
 			capabilities.setCapability("resetKeyBoard", true);
 			driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		}
 		return driver;
 
