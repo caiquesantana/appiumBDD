@@ -11,25 +11,25 @@ import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.touch.offset.PointOption;
 
 
-public class CadastroUsuarioScreenPage {
+public class CadastroUsuarioScreenObject {
 	private WebDriver driver;
 	private WebDriverWait aguardar;
 	private TouchAction actions;
 
-	public CadastroUsuarioScreenPage(WebDriver driver) {
+	public CadastroUsuarioScreenObject(WebDriver driver) {
 		this.driver = driver;
 		aguardar = new WebDriverWait(driver, 5);
 		actions = new TouchAction((PerformsTouchActions) driver);
 	}
 
-	public CadastroUsuarioScreenPage cadastro() {
+	public CadastroUsuarioScreenObject cadastro() {
 		driver.findElement(By.id("com.Advantage.aShopping:id/imageViewMenu")).click();
 		driver.findElement(By.id("com.Advantage.aShopping:id/textViewMenuUser")).click();
 		driver.findElement(By.id("com.Advantage.aShopping:id/textViewDontHaveAnAccount")).click();
 		return this;
 
 	}
-	public CadastroUsuarioScreenPage digitarLogin(String login) {
+	public CadastroUsuarioScreenObject digitarLogin(String login) {
 		WebElement usuario = driver.findElement(By.xpath(
 				"//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.EditText"));
 		usuario.click();
@@ -37,7 +37,7 @@ public class CadastroUsuarioScreenPage {
 		return this;
 	}
 
-	public CadastroUsuarioScreenPage digitarEmail(String email) {
+	public CadastroUsuarioScreenObject digitarEmail(String email) {
 		WebElement Email = driver.findElement(By.xpath(
 				"//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.EditText"));
 		Email.click();
@@ -45,35 +45,35 @@ public class CadastroUsuarioScreenPage {
 		return this;
 	}
 
-	public CadastroUsuarioScreenPage digitarSenha(String senha) {
+	public CadastroUsuarioScreenObject digitarSenha(String senha) {
 		WebElement Senha = driver.findElement(By.xpath(
 				"//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.RelativeLayout/android.widget.EditText"));
 				Senha.click();
 				Senha.sendKeys(senha);
 		return this;
 	}
-	public CadastroUsuarioScreenPage confirmarSenha(String confirmaSenha) {
+	public CadastroUsuarioScreenObject confirmarSenha(String confirmaSenha) {
 		WebElement ConfirmaSenha = driver.findElement(By.xpath(
 				"//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.RelativeLayout/android.widget.EditText"));
 				ConfirmaSenha.click();
 				ConfirmaSenha.sendKeys(confirmaSenha);
 		return this;
 	}
-	public CadastroUsuarioScreenPage digitarNome(String nome) {
+	public CadastroUsuarioScreenObject digitarNome(String nome) {
 		WebElement Nome = driver.findElement(By.xpath(
 				"//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout[1]/android.widget.EditText"));
 		Nome.click();
 		Nome.sendKeys(nome);
 		return this;
 	}
-	public CadastroUsuarioScreenPage digitarSobrenome(String sobreNome) {
+	public CadastroUsuarioScreenObject digitarSobrenome(String sobreNome) {
 		WebElement SobreNome = driver.findElement(By.xpath(
 				"//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout[2]/android.widget.EditText"));
 		SobreNome.click();
 		SobreNome.sendKeys(sobreNome);
 		return this;
 	}
-	public CadastroUsuarioScreenPage digitarTelefone(String contato) {
+	public CadastroUsuarioScreenObject digitarTelefone(String contato) {
 		WebElement Telefone = driver.findElement(By.xpath(
 				"//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.EditText"));
 		Telefone.click();
@@ -81,7 +81,7 @@ public class CadastroUsuarioScreenPage {
 		return this;
 	}
 
-	public CadastroUsuarioScreenPage selecionaPais() {
+	public CadastroUsuarioScreenObject selecionaPais() {
 		driver.findElement(By.id("com.Advantage.aShopping:id/textViewCountries")).click();
 		driver.findElement(By.xpath(
 				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[9]"))
@@ -89,7 +89,7 @@ public class CadastroUsuarioScreenPage {
 		return this;
 	}
 
-	public CadastroUsuarioScreenPage digitarEstado(String estado) {
+	public CadastroUsuarioScreenObject digitarEstado(String estado) {
 		WebElement Estado = driver.findElement(By.xpath(
 				"//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.EditText"));
 		Estado.click();
@@ -97,7 +97,7 @@ public class CadastroUsuarioScreenPage {
 		return this;
 	}
 
-	public CadastroUsuarioScreenPage digitarRua(String rua) {
+	public CadastroUsuarioScreenObject digitarRua(String rua) {
 		WebElement Endereco = driver.findElement(By.xpath(
 				"//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.EditText"));
 		Endereco.click();
@@ -105,7 +105,7 @@ public class CadastroUsuarioScreenPage {
 		return this;
 	}
 
-	public CadastroUsuarioScreenPage digitarCidade(String cidade) {
+	public CadastroUsuarioScreenObject digitarCidade(String cidade) {
 		WebElement Cidade = driver.findElement(By.xpath(
 				"//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.EditText"));
 		Cidade.click();
@@ -113,7 +113,7 @@ public class CadastroUsuarioScreenPage {
 		return this;
 	}
 
-	public CadastroUsuarioScreenPage digitarCodigoPostal(String cep) {
+	public CadastroUsuarioScreenObject digitarCodigoPostal(String cep) {
 		WebElement Cep = driver.findElement(By.xpath(
 				"//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.RelativeLayout[2]/android.widget.EditText"));
 		Cep.click();
@@ -121,17 +121,17 @@ public class CadastroUsuarioScreenPage {
 		return this;
 	}
 
-	public CadastroUsuarioScreenPage enviarFormulario() {
+	public CadastroUsuarioScreenObject enviarFormulario() {
 		driver.findElement(By.id("com.Advantage.aShopping:id/buttonRegister")).click();
 		return this;
 	}
 
-	public CadastroUsuarioScreenPage scroll() {
+	public CadastroUsuarioScreenObject scroll() {
 		actions.press(PointOption.point(1042, 1694)).moveTo(PointOption.point(1063, 403)).release().perform();
 		return this;
 	}
 
-	public CadastroUsuarioScreenPage Expected() throws InterruptedException {
+	public CadastroUsuarioScreenObject Expected() throws InterruptedException {
 		aguardar.until(ExpectedConditions.elementToBeClickable(By.id("com.Advantage.aShopping:id/imageViewMenu")));
 		return this;
 	}

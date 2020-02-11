@@ -16,7 +16,6 @@ Funcionalidade: Cadastro de usuario
     E o endereco
     E a Cidade
     E o codigo postal
-    
 
   @CadastroSucesso
   Cenário: Cadastro de usuario com sucesso

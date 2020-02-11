@@ -4,9 +4,10 @@ import java.net.MalformedURLException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import br.com.rsinet.hub_bdd.appium.screenObject.CadastroUsuarioScreenPage;
+import br.com.rsinet.hub_bdd.appium.screenObject.CadastroUsuarioScreenObject;
 import br.com.rsinet.hub_bdd.appium.suporte.Context;
 import br.com.rsinet.hub_bdd.appium.suporte.DriverWeb;
+import cucumber.api.java.After;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
@@ -14,7 +15,7 @@ import cucumber.api.java.pt.Quando;
 public class CadastroUsuarioStep {
 	private WebDriver driver;
 	private Context testContext;
-	private CadastroUsuarioScreenPage cadastroForm;
+	private CadastroUsuarioScreenObject cadastroForm;
 	
 	@SuppressWarnings("static-access")
 	public CadastroUsuarioStep (Context context) throws MalformedURLException {
@@ -25,18 +26,18 @@ public class CadastroUsuarioStep {
 	
 	@Dado("^que eu esteja no site$")
 	public void que_eu_esteja_no_site() throws Throwable {
-		driver = DriverWeb.creatDriver();
+		//driver = DriverWeb.creatDriver();
 	}
 
 	@Dado("^clico em criar nova conta$")
 	public void clico_em_criar_nova_conta() throws Throwable {
-		CadastroUsuarioScreenPage cadastroForm = new CadastroUsuarioScreenPage(driver);
+		CadastroUsuarioScreenObject cadastroForm = new CadastroUsuarioScreenObject(driver);
 		cadastroForm.cadastro();
 	}
 
 	@Dado("^insiro o login$")
 	public void insiro_o_login() throws Throwable {
-		cadastroForm.digitarLogin("Matuhqe");
+		cadastroForm.digitarLogin("piamapte");
 		
 	}
 
@@ -121,7 +122,5 @@ public class CadastroUsuarioStep {
 	public void apresenta_o_que_o_login_já_esta_cadastrado() throws Throwable {
 		driver.findElement(By.id("com.Advantage.aShopping:id/imageViewMenu")).click();
 		cadastroForm.Expected();
-		DriverWeb.fecharDriver();
 	}
-
 }

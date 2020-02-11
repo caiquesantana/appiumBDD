@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 				 features = "Feature/PesquisaPaginaInicial.feature"
 				 ,glue="br.com.rsinet.hub_bdd.appium.stepDefinition"
-				 ,tags= {"@BuscaHomeSucesso"}
+				 ,tags= {"@BuscaHomeSucesso, @BuscaHomeFalha"}
 				 )
 
 public class BuscaPaginaInicialRunner {

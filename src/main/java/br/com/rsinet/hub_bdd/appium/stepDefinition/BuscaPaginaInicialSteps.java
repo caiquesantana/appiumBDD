@@ -8,8 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import br.com.rsinet.hub_bdd.appium.screenObject.BuscaPaginaInicialScreenPage;
-import br.com.rsinet.hub_bdd.appium.screenObject.LoginScreen;
+import br.com.rsinet.hub_bdd.appium.screenObject.BuscaPaginaInicialScreenObject;
+import br.com.rsinet.hub_bdd.appium.screenObject.LoginScreenObject;
 import br.com.rsinet.hub_bdd.appium.suporte.Context;
 import br.com.rsinet.hub_bdd.appium.suporte.DriverWeb;
 import cucumber.api.java.pt.Dado;
@@ -18,9 +18,9 @@ import cucumber.api.java.pt.Quando;
 
 public class BuscaPaginaInicialSteps {
 	private WebDriver driver;
-	private BuscaPaginaInicialScreenPage busca;
+	private BuscaPaginaInicialScreenObject busca;
 	private Context testContext;
-	private LoginScreen logar;
+	private LoginScreenObject logar;
 	
 	public BuscaPaginaInicialSteps (Context context) throws MalformedURLException {
 		testContext = context;
@@ -57,16 +57,13 @@ public class BuscaPaginaInicialSteps {
 		
 		Assert.assertTrue(produto.equals(selecionado));
 		
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		
-		DriverWeb.fecharDriver();
 	  
 	}
 
 	//negativo
 	@Dado("^Faco o login$")
 	public void faco_o_login() throws Throwable {
-		LoginScreen logar = new LoginScreen (driver);
+		LoginScreenObject logar = new LoginScreenObject (driver);
 		logar.homePage().usuario("cauasantana").password("Caique1").entrar();
 	   
 	}
