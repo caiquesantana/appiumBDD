@@ -1,19 +1,18 @@
 # language: pt
-
-
 Funcionalidade: Busca de um produto pela pagina inicial
+
   Contexto: 
     Dado que estou na tela home
 
-	@BuscaHomeSucesso
+  @BuscaHomeSucesso
   Cenário: Busca de produto pela home com sucesso
     Quando clico na categoria LAPTOPS
     E seleciono o produto
-    E estou no produto desejado
-	Então eu valido o produto
+    Então eu valido o produto
 
-	@BuscaHomeFalha
-  Cenario: Certifica abertura de produto diferente
-    E escolhe produto na tela inicial
-    E abre produto diferente do que consta na  tela inicial
-    Então eu comparo o produto
+  @BuscaHomeFalha
+  Cenario: Quantidade do produto incorreta ao ADD TO CART
+    E Faco o login
+    E escolho produto na tela inicial
+    E adiciono mais de 10 unidades no carrinho
+    Então eu comparo a quantidade de produto no carrinho

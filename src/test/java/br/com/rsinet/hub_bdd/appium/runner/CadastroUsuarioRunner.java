@@ -1,9 +1,7 @@
 package br.com.rsinet.hub_bdd.appium.runner;
 
-import org.junit.After;
 import org.junit.runner.RunWith;
 
-import br.com.rsinet.hub_bdd.appium.suporte.DriverWeb;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
@@ -16,9 +14,5 @@ import cucumber.api.junit.Cucumber;
 				 )
 		
 public class CadastroUsuarioRunner {
-	@After
-	public static void driverQuit() {
-		DriverWeb.fecharDriver();
-	}
 
 }

@@ -36,7 +36,7 @@ public class CadastroUsuarioStep {
 
 	@Dado("^insiro o login$")
 	public void insiro_o_login() throws Throwable {
-		cadastroForm.digitarLogin("Matueqe");
+		cadastroForm.digitarLogin("Matuhqe");
 		
 	}
 
@@ -110,6 +110,8 @@ public class CadastroUsuarioStep {
 	@Então("^o usuário foi cadastrado$")
 	public void o_usuário_foi_cadastrado() throws Throwable {
 		driver.findElement(By.id("com.Advantage.aShopping:id/imageViewMenu")).click();
+		cadastroForm.Expected();
+		DriverWeb.fecharDriver();
 		
 		
 	}
@@ -118,7 +120,8 @@ public class CadastroUsuarioStep {
 	@Então("^apresenta o que o login já esta cadastrado$")
 	public void apresenta_o_que_o_login_já_esta_cadastrado() throws Throwable {
 		driver.findElement(By.id("com.Advantage.aShopping:id/imageViewMenu")).click();
-		
+		cadastroForm.Expected();
+		DriverWeb.fecharDriver();
 	}
 
 }
