@@ -2,6 +2,7 @@ package br.com.rsinet.hub_bdd.appium.screenObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -41,6 +42,12 @@ public class BuscaPaginaInicialScreenObject {
 	}
 	public BuscaPaginaInicialScreenObject Expected() throws InterruptedException {
 		aguardar.until(ExpectedConditions.elementToBeClickable(By.id("com.Advantage.aShopping:id/imageViewMenu")));
+		return this;
+	}
+	public BuscaPaginaInicialScreenObject quantidade(String qtd) {
+		WebElement quantidade = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText"));
+		quantidade.click();
+		quantidade.sendKeys(qtd);
 		return this;
 	}
 }

@@ -7,9 +7,9 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-				 features = "Feature/CadastroUsuario.feature"
+				 features = "Feature/Cadastro.feature"
 				 ,glue="br.com.rsinet.hub_bdd.appium.stepDefinition"
-				 ,tags= {"@CadastroSucesso, @CadastroFalha"}
+				 ,tags= {"@Cadastro"}
 				 
 				 )
 		

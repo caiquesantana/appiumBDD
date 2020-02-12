@@ -12,7 +12,6 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class DriverWeb {
 	private static DesiredCapabilities capabilities;
-
 	private static WebDriver driver;
 
 	@SuppressWarnings("rawtypes")

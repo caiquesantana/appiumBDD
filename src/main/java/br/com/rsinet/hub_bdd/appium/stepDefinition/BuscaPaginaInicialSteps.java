@@ -12,6 +12,7 @@ import br.com.rsinet.hub_bdd.appium.screenObject.BuscaPaginaInicialScreenObject;
 import br.com.rsinet.hub_bdd.appium.screenObject.LoginScreenObject;
 import br.com.rsinet.hub_bdd.appium.suporte.Context;
 import br.com.rsinet.hub_bdd.appium.suporte.DriverWeb;
+import br.com.rsinet.hub_bdd.appium.suporte.Prints;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
@@ -28,10 +29,10 @@ public class BuscaPaginaInicialSteps {
 		driver = testContext.getDriver().creatDriver();
 	}
 	
-	//Contexto
 	@Dado("^que estou na tela home$")
 	public void que_estou_na_tela_home() throws Throwable {
-		driver = DriverWeb.creatDriver();
+		DriverWeb.creatDriver();
+		
 	  
 	}
 
@@ -46,21 +47,22 @@ public class BuscaPaginaInicialSteps {
 	public void seleciono_o_produto() throws Throwable {
 		busca.produtoSelecionado();
 		
+		
 	   
 	}
 
+	//Sucesso
 	@Então("^eu valido o produto$")
 	public void eu_valido_o_produto() throws Throwable {
 		//WebElement produto = driver.findElement(By.id("//android.widget.RelativeLayout[@content-desc=\"Laptops\"]/android.widget.LinearLayout/android.widget.GridView/android.widget.RelativeLayout[1]/android.widget.TextView[1]"));
 		String produto = "HP CHROMEBOOK 14 G1(ENERGY STAR)";
 		String selecionado = driver.findElement(By.id("com.Advantage.aShopping:id/textViewProductName")).getText();
-		
 		Assert.assertTrue(produto.equals(selecionado));
-		
-	  
+		Prints.tirarPrints("BuscaHomeSucesso", driver);
+		DriverWeb.fecharDriver();
 	}
 
-	//negativo
+	//Falha
 	@Dado("^Faco o login$")
 	public void faco_o_login() throws Throwable {
 		LoginScreenObject logar = new LoginScreenObject (driver);
@@ -78,9 +80,7 @@ public class BuscaPaginaInicialSteps {
 	@Dado("^adiciono mais de (\\d+) unidades no carrinho$")
 	public void adiciono_mais_de_unidades_no_carrinho(int arg1) throws Throwable {
 		busca.addCarrinho();
-		WebElement quantidade = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText"));
-		quantidade.click();
-		quantidade.sendKeys("1");
+		busca.quantidade("1");
 		busca.confirmarCompra();
 		
 	 
@@ -92,7 +92,8 @@ public class BuscaPaginaInicialSteps {
 		quantidade.getText();
 		String qtdCarrinho = driver.findElement(By.id("com.Advantage.aShopping:id/textViewCartLength")).getText();
 		Assert.assertFalse(qtdCarrinho.equals(quantidade));
-		
+		Prints.tirarPrints("BuscaHomeFalha", driver);
+		DriverWeb.fecharDriver();
 	}
 
 }
