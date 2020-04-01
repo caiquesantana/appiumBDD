@@ -8,10 +8,13 @@ Funcionalidade: Pesquisa de produto
     Quando clico na lupa de pesquisa
 
   @PesquisaLupaSucesso
-  Cenário: Buscar um produto sucesso
-    E digito o nome do produto desejado
+  Esquema do Cenário: Buscar um produto sucesso
+    E digito o nome do produto desejado "<produto>"
     E clico no produto
     Então estarei na tela do produto pesquisado
+    Exemplos:
+      | produto                 |
+      | HP CHROMEBOOK 14 G1(ES) |
 
   @pesquisarProdutoInexistente
   Cenario: pesquisar produto inexistente

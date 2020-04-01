@@ -25,9 +25,7 @@ Funcionalidade: Cadastro de usuario
 
     Exemplos: 
       | login      | email            | senha   | confirmarSenha | nome   | sobrenome | telefone  | estado  | endereco | cidade  | cep        |
-      | Caique1910 | caique@email.com | Caique1 | Caique1        | caique | Santana   | 987665432 | Mendoza | Rua hum  | Palermo | 0988490983 |
-      | Caique1911 | caique@email.com | Caique1 | Caique1        | Caique | Santana   | 003902384 | Mendoza | Rua hum  | Palermo | 0968977686 |
-
+      | Caique1917 | caique@email.com | Caique1 | Caique1        | caique | Santana   | 987665432 | Mendoza | Rua hum  | Palermo | 0988490983 |
   @CadastroFalha
   Esquema do Cenário: Cadastro de usuario com falha
     E clico em criar nova conta

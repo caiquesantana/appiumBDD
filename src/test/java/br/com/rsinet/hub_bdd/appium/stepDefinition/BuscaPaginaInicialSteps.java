@@ -18,15 +18,14 @@ import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
 
 public class BuscaPaginaInicialSteps {
-	private WebDriver driver;
+	private WebDriver driver = DriverWeb.driver;
 	private BuscaPaginaInicialScreenObject busca;
 	private Context testContext;
 	private LoginScreenObject logar;
 	
-	public BuscaPaginaInicialSteps (Context context) throws MalformedURLException {
+	public BuscaPaginaInicialSteps (Context context) {
 		testContext = context;
 		busca = testContext.getManager().getBuscaHome();
-		driver = testContext.getDriver().creatDriver();
 	}
 	
 	@Dado("^que estou na tela home$")

@@ -1,4 +1,5 @@
 # language: pt
+@PesquiPaginaInicial
 Funcionalidade: Busca de um produto pela pagina inicial
 
   Contexto: 

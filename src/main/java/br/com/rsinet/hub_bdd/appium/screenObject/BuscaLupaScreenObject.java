@@ -4,7 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class BuscaLupaScreenObject {
-	WebDriver driver;
+	private WebDriver driver;
+	private String produto = "HP CHROMEBOOK 14 G1(ES)";
 	
 	public BuscaLupaScreenObject(WebDriver driver) {
 		this.driver = driver;
@@ -26,4 +27,5 @@ public class BuscaLupaScreenObject {
 		driver.findElement(By.id("com.Advantage.aShopping:id/imageViewSearch")).click();
 		return this;
 	}
+
 }

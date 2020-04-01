@@ -11,7 +11,8 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 				 features = "./Feature/"
 				 ,glue="br.com.rsinet.hub_bdd.appium.stepDefinition"
-				 ,plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/Reports.html"}
+				 ,plugin = {"com.cucumber.listener.ExtentCucumberFormatter:Reports\\report.html"}
+			//	 , tags = "@PesquisaPelaLupa"
 				 )
 
 

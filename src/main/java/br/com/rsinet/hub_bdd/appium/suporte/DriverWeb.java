@@ -12,7 +12,7 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class DriverWeb {
 	private static DesiredCapabilities capabilities;
-	private static WebDriver driver;
+	public static WebDriver driver;
 
 	@SuppressWarnings("rawtypes")
 	public static WebDriver creatDriver() throws MalformedURLException {

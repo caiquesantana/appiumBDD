@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 				 features = "Feature/BuscaProdutoLupa.feature"
 				 ,glue= {"br.com.rsinet.hub_bdd.appium.stepDefinition","br.com.rsinet.hub_bdd.appium.suporte"}
-				 ,tags= {"@PesquisaLupaSucesso, @pesquisarProdutoInexistente"}
+				 ,tags= {"@PesquisaLupaSucesso"}
 				 )
 
 public class BuscaLupaRunner {
